@@ -12,6 +12,7 @@ export interface CommitData {
 
 export interface CommitItem {
   author: string;
+  avatarUrl: string;
   hash: string;
   message: string;
 }
