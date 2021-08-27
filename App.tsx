@@ -18,11 +18,17 @@ const App = () => {
 
   return (
     <SafeAreaView>
-      <View>
+      <View style={styles.commitListWrapper}>
         <CommitListComponent commitItemList={commitList} />
       </View>
     </SafeAreaView>
   );
 }
+
+const styles = StyleSheet.create({
+  commitListWrapper: {
+    margin: 20
+  }
+});
 
 export default App;
