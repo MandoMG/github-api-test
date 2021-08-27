@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   cardHeaderWrapper: {
     alignItems: 'center',
-    backgroundColor: '#CCCCCC',
+    backgroundColor: '#d4d4d4',
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     flex: 1,
