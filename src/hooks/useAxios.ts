@@ -14,6 +14,7 @@ const useAxios = () => {
     return !!githubData ? githubData?.map(commitData => {
       return {
         author: commitData.commit.author.name,
+        avatarUrl: commitData.author.avatar_url,
         hash: commitData.sha,
         message: commitData.commit.message
       }
