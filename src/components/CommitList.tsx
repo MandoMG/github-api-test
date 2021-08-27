@@ -18,8 +18,8 @@ const CommitListComponent = ({ commitItemList }: CommitListProps) => {
             <Text style={styles.headerText}>{item.author}</Text>
           </View>
           <View style={styles.cardBodyWrapper}>
-            <Text>{item.message}</Text>
-            <Text>{item.hash}</Text>
+            <Text style={styles.commitMessageText}>{item.message}</Text>
+            <Text style={styles.commitHashText}>{item.hash}</Text>
           </View>
         </View>
       )}
@@ -29,15 +29,17 @@ const CommitListComponent = ({ commitItemList }: CommitListProps) => {
 
 const styles = StyleSheet.create({
   cardWrapper: {
+    borderColor: '#7A7a7a',
     borderRadius: 10,
     borderWidth: 1,
+    overflow: 'hidden',
     marginBottom: 10
   },
   cardHeaderWrapper: {
     alignItems: 'center',
-    backgroundColor: '#AAAAAA',
-    borderTopLeftRadius: 5,
-    borderTopRightRadius: 5,
+    backgroundColor: '#CCCCCC',
+    borderTopLeftRadius: 10,
+    borderTopRightRadius: 10,
     flex: 1,
     flexDirection: 'row',
     padding: 8
@@ -48,8 +50,17 @@ const styles = StyleSheet.create({
     width: 22
   },
   headerText: {
+    fontSize: 15,
     fontWeight: 'bold',
     paddingLeft: 8
+  },
+  commitMessageText: {
+    fontSize: 14
+  },
+  commitHashText: {
+    color: '#444444',
+    paddingTop: 5,
+    fontSize: 12
   },
   cardBodyWrapper: {
     padding: 8
