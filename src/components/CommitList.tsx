@@ -11,15 +11,15 @@ const CommitListComponent = ({ commitItemList }: CommitListProps) => {
     <FlatList
       data={commitItemList}
       keyExtractor={item => item.hash}
-      renderItem={({ item }) => (
+      renderItem={({ item, index }) => (
         <View style={styles.cardWrapper}>
           <View style={styles.cardHeaderWrapper}>
-            <Image source={{ uri: item.avatarUrl }} style={styles.headerImage} />
-            <Text style={styles.headerText}>{item.author}</Text>
+            <Image source={{ uri: item.avatarUrl }} style={styles.headerImage} testID={`commit-item-${index}-avatar-url`} />
+            <Text style={styles.headerText} testID={`commit-item-${index}-header-text`} >{item.author}</Text>
           </View>
           <View style={styles.cardBodyWrapper}>
-            <Text style={styles.commitMessageText}>{item.message}</Text>
-            <Text style={styles.commitHashText}>{item.hash}</Text>
+            <Text style={styles.commitMessageText} testID={`commit-item-${index}-message-text`} >{item.message}</Text>
+            <Text style={styles.commitHashText} testID={`commit-item-${index}-hash-text`} >{item.hash}</Text>
           </View>
         </View>
       )}
