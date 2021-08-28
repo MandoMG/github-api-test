@@ -2,7 +2,7 @@ import 'react-native';
 import React from 'react';
 import { render } from '@testing-library/react-native';
 import CommitListComponent from '../../src/components/CommitList';
-import mockCommitListData from '../__mocks__/MockCommitListData';
+import mockCommitListData from '../../__mocks__/MockCommitListData';
 
 describe('CommitList', () => {
   it('renders component', () => {
