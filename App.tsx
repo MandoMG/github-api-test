@@ -20,8 +20,8 @@ const App = () => {
     <>
       <SafeAreaView>
         <View style={styles.header}>
-          <Text style={styles.headerText}>Commits</Text>
-          <Text style={styles.subHeaderText}>MandoMG / github-api-test</Text>
+          <Text style={styles.headerText} testID="app-header">Commits</Text>
+          <Text style={styles.subHeaderText} testID="app-header">MandoMG / github-api-test</Text>
         </View>
         <View style={styles.commitListWrapper}>
           <CommitListComponent commitItemList={commitList} />
