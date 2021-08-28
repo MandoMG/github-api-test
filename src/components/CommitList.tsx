@@ -7,7 +7,7 @@ interface CommitListProps {
 };
 
 const CommitListComponent = ({ commitItemList }: CommitListProps) => {
-  return (
+  return !!commitItemList && commitItemList.length ? (
     <FlatList
       data={commitItemList}
       keyExtractor={item => item.hash}
@@ -24,8 +24,8 @@ const CommitListComponent = ({ commitItemList }: CommitListProps) => {
         </View>
       )}
     />
-  )
-}
+  ) : (<></>)
+};
 
 const styles = StyleSheet.create({
   cardWrapper: {
