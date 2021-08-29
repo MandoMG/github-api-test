@@ -33,6 +33,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   header: {
+    marginTop: 15,
     marginHorizontal: 20
   },
   headerText: {
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
   },
   commitListWrapper: {
     marginHorizontal: 20,
-    marginBottom: 120,
+    marginBottom: 180,
     marginTop: 18
   }
 });
