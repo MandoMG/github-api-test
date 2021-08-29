@@ -9,48 +9,44 @@
  */
 
 import React from 'react';
-import { FlatList, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import CommitListComponent from './src/components/CommitList';
 import useAxios from './src/hooks/useAxios';
 
 const App = () => {
   const { commitList } = useAxios();
 
   return (
-    <SafeAreaView>
-      <View>
-        <FlatList
-          data={commitList}
-          keyExtractor={item => item.hash}
-          renderItem={({ item }) => (
-            <View>
-              <Text style={{ color: 'white' }}>{item.author}</Text>
-              <Text style={{ color: 'white' }}>{item.hash}</Text>
-              <Text style={{ color: 'white' }}>{item.message}</Text>
-            </View>
-          )}
-        />
-      </View>
-    </SafeAreaView>
+    <>
+      <SafeAreaView>
+        <View style={styles.header}>
+          <Text style={styles.headerText} testID="app-header">Commits</Text>
+          <Text style={styles.subHeaderText} testID="app-header">MandoMG / github-api-test</Text>
+        </View>
+        <View style={styles.commitListWrapper}>
+          <CommitListComponent commitItemList={commitList} />
+        </View>
+      </SafeAreaView>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+  header: {
+    marginHorizontal: 20
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  headerText: {
+    fontSize: 28,
+    fontWeight: 'bold'
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  subHeaderText: {
+    fontSize: 18
   },
-  highlight: {
-    fontWeight: '700',
-  },
+  commitListWrapper: {
+    marginHorizontal: 20,
+    marginBottom: 120,
+    marginTop: 18
+  }
 });
 
 export default App;

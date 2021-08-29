@@ -10,6 +10,13 @@ export interface CommitData {
   parents: Parent[];
 }
 
+export interface CommitItem {
+  author: string;
+  avatarUrl: string;
+  hash: string;
+  message: string;
+}
+
 interface Commit {
   author: CommitUser;
   comitter: CommitUser;
@@ -34,6 +41,8 @@ interface Tree {
 interface Verification {
   verified: boolean;
   reason: string;
+  signature: string;
+  payload: string;
 }
 
 interface Author {
